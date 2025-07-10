@@ -1,0 +1,73 @@
+PART 3: CRITICAL THINKING
+
+ETHICS & BIAS (10 Points)
+
+1. BIASED TRAINING DATA: A Hidden Risk in Healthcare AI
+
+Considering that "A hospital wants an AI system to predict patient readmission risk within 30 days of discharge". using this scenario as a case study we want to uncover the following demerit of bias in AI models as outlined below;
+
+*How might biased training data affect patient outcomes in the above case study?
+
+If our AI model used in this hospital is trained on biased or unrepresentative data, it could significantly skew predictions, leading to unfair or even harmful patient outcomes. 
+
+Here's how it can result to misleading or rather harmful patient outcomes:
+
+*Disparities in Prediction Accuracy: such as;
+- Demographic bias: If the data under-represents certain groups (e.g. ethnic minorities, women, elderly patients), the model may make less accurate predictions for these populations.
+- Socioeconomic bias: Patients from lower-income areas might be flagged incorrectly due to systemic factors not reflected in the data, such as limited access to follow-up care.
+
+*Poor Resource Allocation: such as;
+- False positives: Patients mistakenly identified as high-risk could receive unnecessary interventions, leading to increased costs and stress.
+- False negatives: Truly high-risk patients not flagged by the model might miss out on critical support—potentially resulting in avoidable readmissions.
+
+*Ethical and Legal Implications: such as;
+- Violation of equity principles: Using biased data can exacerbate existing healthcare inequalities.
+- Compliance risks: Hospitals might face regulatory scrutiny if AI decisions are found to reinforce discrimination or neglect patient safety.
+
+VARIOUS SOURCES/SUBTLE WAYS BIAS CAN CREEP INTO OUR HEALTHCARE AI MODEL
+Even with good intentions, bias can creep in through the following medium:
+- Historical healthcare decisions and documentation practices
+- Incomplete or missing data from certain groups
+- Outcome labels influenced by systemic factors (e.g. prior access to care)
+
+STRATEGY EMPLOYED TO REDUCE BIAS IN HEALTHCARE AI MODEL
+One major strategy to help alleviate this bias in our healthcare AI model is; 
+*To ensure regular fairness audit is performed for hidden biases. Also,statistical tools like disparate impact analysis should be used to spot discrepancies.Collaboration with health professionals & ethicists to vet model decisions for clinical relevance and review the social implications of AI recommendations should be considered. 
+*Incorporate Feedback Loops by Allowing the system to learn from real-world outcomes to improve accuracy over tie.
+ and Making it easy for staff to report questionable predictions and bias concerns.
+*Validation Techniques: including
+Stratified testing i.e Evaluating model performance separately across subgroups.
+Simulated scenarios i.e Testing how the model behaves in edge cases (e.g. rare conditions, under-served populations).
+ and Benchmarking i.e Comparing results against national standards and other models to identify gaps should be implemented.
+
+
+2. Trade-offs (10 points):
+
+Discuss the trade-off between model interpretability and accuracy in healthcare.
+
+In healthcare AI, balancing interpretability and accuracy isn't just a technical question,but a matter of clinical trust, patient safety, and ethical responsibility.
+When designing this model, the hospital must choose between; 
+*ACCURACY:Which offers better predictive power, handles complex patterns and have fewer readmission,but are limited to opaque decisions(Black box) that often times is difficult to justify leading to ethical concerns like bias and fairness.
+consider example of "A deep learning model achieves 85% accuracy, but its predictions are opaque. Why should it flag a patient as high risk.
+
+*INTERPRETABILITY:which uses much simpler models that provides transparent decisions which are easily understable by clinicians.like logistic regression, shallow decisions tree,etc.
+consider example of "A logistic regression model achieves 75% accuracy, but clearly shows factors contributing to risk." here you can observe that the need for accuracy in prediction is traded for easy understandable outcomes missing complex interactions of data. 
+
+If a high-risk prediction leads to expensive interventions or denial of discharge, clinicians may demand an explanation. Without interpretability, the hospital risks;
+*Losing clinician trust
+*Facing legal challenges if the model’s decisions appear biased (e.g., over-predicting risk for certain demographic groups)
+
+IMPACT OF LIMITED COMPUTATIONAL RESOURCES
+When computational resources are constrained (e.g., older servers, limited GPUs/CPUs, small IT budget), several factors come into play:
+
+*Training time factor:causing complex models (e.g., deep neural networks, large ensembles) require significant time and hardware to train. Simpler models can be trained quickly on standard CPUs.
+*Inference speed factor:Causing predicting risk in real-time (e.g., when a patient is discharged) must be fast. Simpler models respond faster; complex models can cause latency.
+*Memory footprint factor:Causing deep models to have millions of parameters, consuming more RAM and disk space; simpler models are lightweight.
+*Maintenance & scalability:Causing complex models to be very hard to retrain, tune, and deploy repeatedly in resource-constrained environments.
+
+Given these constraints above, 
+
+*The hospital would likely favor simpler, more interpretable models;Logistic regression,Decision trees,Small random forests (with few trees) and use basic preprocessing pipelines instead of complex feature engineering or embeddings.
+*Avoid resource-intensive methods like deep neural networks, very large gradient boosting models and complex hyperparameter optimization (e.g., Bayesian search over large spaces).
+consequently,Simpler models often perform reasonably well and the benefits of speed, stability, and explainability often outweigh small accuracy gains from complex models.
+
